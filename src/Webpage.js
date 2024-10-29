@@ -11,7 +11,7 @@ function HomePage() {
         <div className="search-bar">
           <input type="text" placeholder="Search..." />
           <button type="button">Search</button>
-          <Link className="log" to="/login">Log In</Link>
+          <Link className="log" to="/login">Log IN</Link>
         </div>
 
         <nav>

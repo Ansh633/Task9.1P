@@ -10,7 +10,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 101vh; 
+    min-height: 100vh; 
     background-color: #f0f4f8;
 }
 
@@ -25,7 +25,7 @@
     margin-top: 50px; 
     padding: 30px;
     background-color: white;
-    box-shadow: 0 4px 15px rgba(74, 60, 135, 0.1); 
+    box-shadow: 0 4px 15px rgba(139, 201, 23, 0.1); 
     border-radius: 8px; 
 }
 

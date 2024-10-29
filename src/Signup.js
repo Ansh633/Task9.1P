@@ -25,8 +25,8 @@ const Signup = () => {
     try {
       setError('');
       setLoading(true);
-      await signup(emailRef.current.value, enteredPassword); // Handle sign-up logic
-      navigate('/login'); // Redirect to login on successful sign-up
+      await signup(emailRef.current.value, enteredPassword); 
+      navigate('/login'); 
     } catch (err) {
       setError(err.message);
     } finally {

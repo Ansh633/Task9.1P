@@ -28,7 +28,7 @@ export default function Login() {
     return (
         <div className='body1'>
         <div className="login">
-            <h1>Log In</h1>
+            <h1>Log IN</h1>
             {error && <div className="alert">{error}</div>}
             <form onSubmit={handlecheck}>
                 <label>Email:
