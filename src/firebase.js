@@ -5,11 +5,12 @@ const firebaseConfig = {
   apiKey: "AIzaSyAhRuaEbUMvIMeail-mp2OiY19MAXN2Rgk",
   authDomain: "task71-a72b6.firebaseapp.com",
   projectId: "task71-a72b6",
-  storageBucket: "task71-a72b6.appspot.com",
+  storageBucket: "task71-a72b6.firebasestorage.app",
   messagingSenderId: "687178965233",
   appId: "1:687178965233:web:346c98ffa4e15aca8e4950",
   measurementId: "G-GDQG579QYV"
 };
+
 
 
 const firebaseApp = initializeApp(firebaseConfig);
