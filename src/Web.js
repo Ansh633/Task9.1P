@@ -4,13 +4,11 @@ import { useAuth } from './Authentication';
 import './Webpage.css';
 
 function Web() {
-  const { currentUser, logout } = useAuth(); 
+  const { currentUser } = useAuth();  
   const navigate = useNavigate();
 
   const handleLogout = async () => {
- 
-      navigate('/'); 
-   
+    navigate('/'); 
   };
 
   return (
@@ -28,12 +26,9 @@ function Web() {
         <div className="search-bar">
           <input type="text" placeholder="Search..." />
           <button type="button">Search</button>
-
           
           {currentUser ? (
-           <button onClick={handleLogout} className="log">Log Out</button> 
-          
-          
+            <button onClick={handleLogout} className="log">Log Out</button> 
           ) : (
             <Link className="log" to="/signup">Sign Up</Link>
           )}
