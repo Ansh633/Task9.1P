@@ -23,7 +23,7 @@ export function Authent({ children }) {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      act(() => {  // 🔥 Wrapping inside `act()`
+      act(() => {  
         setCurrentUser(user);
         setLoading(false);
       });
