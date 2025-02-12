@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import Web from './Web';  // Import the correct component
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('renders DEV@Deakin header', () => {
+  render(<Web />);
+  const headerElement = screen.getByText(/DEV@Deakin/i);  // Look for actual content in your UI
+  expect(headerElement).toBeInTheDocument();
 });
