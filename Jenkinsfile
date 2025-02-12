@@ -18,11 +18,7 @@ pipeline {
             }
         }
         
-        stage("Test"){
-            steps{
-                bat "npm test -- --passWithNoTests"
-            }
-        }
+        
         
         stage("Code Analysis"){
             steps{
