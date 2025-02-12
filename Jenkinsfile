@@ -5,13 +5,13 @@ pipeline {
     }
     
     stages {
-        stage("Install") {
+        stage("Build Stage") {
             steps {
                 git url : "https://github.com/Ansh633/Task9.1P.git", branch : "main"
                 bat "npm install --verbose -omit=optional"
             }
         }
-        stage("Build Stage"){
+        stage("Test Stage"){
             steps{
                 
                 bat "npm run build"
