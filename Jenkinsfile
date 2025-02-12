@@ -11,7 +11,7 @@ pipeline {
                 bat "npm install --verbose -omit=optional"
             }
         }
-        stage("Build"){
+        stage("Build Stage"){
             steps{
                 
                 bat "npm run build"
@@ -20,13 +20,13 @@ pipeline {
         
         
         
-        stage("Code Analysis"){
+        stage("Code Analysis Stage"){
             steps{
                 bat "npx eslint src"
             }
         }
         
-        stage("Deploy"){
+        stage("Deploy Stage
             steps{
                 script{
                     def netlifySiteID = '874caac1-235f-4e36-a524-af99313e038f'
@@ -36,6 +36,11 @@ pipeline {
                     bat "npx netlify deploy --site ${netlifySiteID} --auth ${netlifyAccessToken} --dir ./build --prod"
                 }
             }
+        }
+        stage("Monitoring & Alerting Staf") {
+           steps {
+               bat "npx netlify status"
+                 }
         }
     
     }
