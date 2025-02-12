@@ -1,7 +1,7 @@
-import React, { useContext, useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { auth } from './firebase.js';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
-import { act } from 'react-dom/test-utils';  // Import act()
+import { act } from 'react';  
 
 const AuthContext = React.createContext();
 
@@ -32,11 +32,7 @@ export function Authent({ children }) {
     return unsubscribe;
   }, []);
 
-  const value = {
-    currentUser,
-    signup,
-    login,
-  };
+  const value = { currentUser, signup, login };
 
   return (
     <AuthContext.Provider value={value}>
