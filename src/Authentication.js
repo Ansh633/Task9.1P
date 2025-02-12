@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { auth } from './firebase.js';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
+import { act } from 'react-dom/test-utils';  // Import act()
 
 const AuthContext = React.createContext();
 
@@ -9,22 +10,25 @@ export function useAuth() {
 }
 
 export function Authent({ children }) {
-  const [currentUser, setCurrentUser] = useState();
-  const [loading, setloading] = useState(true);
+  const [currentUser, setCurrentUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   function login(email, password) {
-    return signInWithEmailAndPassword(auth, email, password); 
+    return signInWithEmailAndPassword(auth, email, password);
   }
 
   function signup(email, password) {
-    return createUserWithEmailAndPassword(auth, email, password); 
+    return createUserWithEmailAndPassword(auth, email, password);
   }
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      setCurrentUser(user);
-      setloading(false);
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      act(() => {  // 🔥 Wrapping inside `act()`
+        setCurrentUser(user);
+        setLoading(false);
+      });
     });
+
     return unsubscribe;
   }, []);
 
