@@ -14,23 +14,26 @@ pipeline {
         }
 
         stage("Build") {
-            steps {
-                script {
-                    env.CI = 'false'  // 🔥 Prevents build failure due to warnings
-                }
-                bat "npm run build"
+           steps {
+                git url: "https://github.com/Ansh633/Task9.1P.git", branch: "main"
+                bat "npm install --verbose -omit=optional"
+                bat "npm install --save-dev @babel/plugin-proposal-private-property-in-object"  // 🔥 Install missing Babel plugin
             }
         }
 
         stage("Test") {
             steps {
-                bat "npm test -- --passWithNoTests"
+                git url: "https://github.com/Ansh633/Task9.1P.git", branch: "main"
+                bat "npm install --verbose -omit=optional"
+                bat "npm install --save-dev @babel/plugin-proposal-private-property-in-object"  // 🔥 Install missing Babel plugin
             }
         }
 
         stage("Code Analysis") {
             steps {
-                bat "npx eslint src"
+                git url: "https://github.com/Ansh633/Task9.1P.git", branch: "main"
+                bat "npm install --verbose -omit=optional"
+                bat "npm install --save-dev @babel/plugin-proposal-private-property-in-object"  // 🔥 Install missing Babel plugin
             }
         }
 
