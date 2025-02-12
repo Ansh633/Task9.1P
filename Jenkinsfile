@@ -26,7 +26,7 @@ pipeline {
             }
         }
         
-        stage("Deploy Stage
+        stage("Deploy Stage"){
             steps{
                 script{
                     def netlifySiteID = '874caac1-235f-4e36-a524-af99313e038f'
