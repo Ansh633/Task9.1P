@@ -28,6 +28,10 @@
       "react-app/jest"
     ]
   },
+  "scripts": {
+  "test": "react-scripts test --ci --watchAll=false"
+},
+
 
 
   "browserslist": {
