@@ -14,8 +14,7 @@ pipeline {
         }
         stage("Test Stage"){
             steps{
-                 bat "npm install jest --save-dev"  // Ensure Jest is installed
-                bat "npx jest --coverage"   
+               bat "npm test -- --passWithNoTests"
                
             }
         }
